@@ -5,17 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Merci Payment</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link
-href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&displa
-y=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 body {
-font-family: 'Prompt'
-, sans-serif;
+font-family: 'Prompt', sans-serif;
 background: linear-gradient(135deg, #FFF9E2 0%, #F7D6E3 100%);
 min-height: 100vh;
 }
-/* อนิเมชั่นลอยๆ สำาหรับ SVG พื้นหลัง */
+/* อนิเมชั่นลอยๆ สำหรับ SVG พื้นหลัง */
 @keyframes float-up-down {
 0%, 100% { transform: translateY(0px) rotate(0deg); }
 50% { transform: translateY(-15px) rotate(10deg); }
@@ -29,7 +26,7 @@ min-height: 100vh;
 50% { transform: scale(1.1); opacity: 1; }
 }
 @keyframes spin-slow { 100% { transform: rotate(360deg); } }
-/* อนิเมชั่นกรอบเส ้ นประวิ่ง */
+/* อนิเมชั่นกรอบเส้นประวิ่ง */
 @keyframes dash-animation {
 from { stroke-dashoffset: 0; }
 to { stroke-dashoffset: -24; }
@@ -70,38 +67,9 @@ tailwind.config = {
 theme: {
 extend: {
 colors: {
-cream: {
-50: '#fffdfa'
-,
-100: '#fdf5ee'
-,
-200: '#fae8d4'
-,
-},
-brown: {
-300: '#C97EA9'
-,
-400: '#C97EA9'
-,
-500: '#C97EA9'
-,
-600: '#C97EA9'
-,
-},
-pink: {
-50: '#F7D6E3'
-,
-100: '#F7D6E3'
-,
-200: '#F7D6E3'
-,
-300: '#C97EA9'
-,
-400: '#C97EA9'
-,
-500: '#C97EA9'
-,
-}
+cream: { 50: '#fffdfa', 100: '#fdf5ee', 200: '#fae8d4' },
+brown: { 300: '#C97EA9', 400: '#C97EA9', 500: '#C97EA9', 600: '#C97EA9' },
+pink: { 50: '#F7D6E3', 100: '#F7D6E3', 200: '#F7D6E3', 300: '#C97EA9', 400: '#C97EA9', 500: '#C97EA9' }
 }
 }
 }
@@ -109,97 +77,55 @@ pink: {
 </script>
 </head>
 <body class="flex flex-col items-center py-6 px-4 text-brown-600 relative overflow-x-hidden">
-<!-- Background Decorative SVGs (พื้นหลังเดิมเป ๊ ะๆ) -->
+<!-- Background Decorative SVGs -->
 <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-<svg class="absolute top-[5%] left-[10%] w-8 h-8 text-pink-300 anim-float-1"
-fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17
-14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-<svg class="absolute top-[15%] left-[2%] w-6 h-6 text-white/60 anim-pulse"
-fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2
-8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42
-22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-<svg class="absolute top-[8%] left-[25%] w-4 h-4 text-pink-400/50 anim-float-3"
-fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
-<svg class="absolute top-[10%] right-[8%] w-10 h-10 text-pink-200 anim-float-2"
-fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2
-8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42
-22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-<svg class="absolute top-[2%] right-[20%] w-5 h-5 text-white/80 anim-float-4"
-fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17
-14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-<svg class="absolute top-[40%] -left-2 w-12 h-12 text-pink-100 anim-pulse"
-fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2
-8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42
-22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-<svg class="absolute top-[50%] right-[2%] w-6 h-6 text-pink-300 anim-float-1"
-fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22
-9.24l-7.19-
-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-<svg class="absolute bottom-[10%] left-[10%] w-8 h-8 text-pink-200 anim-float-4"
-fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2
-8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42
-22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-<svg class="absolute bottom-[5%] right-[15%] w-7 h-7 text-white/70 anim-float-2"
-fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17
-14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-<svg class="absolute bottom-[20%] right-[5%] w-4 h-4 text-pink-400/40 anim-pulse"
-fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+<svg class="absolute top-[5%] left-[10%] w-8 h-8 text-pink-300 anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+<svg class="absolute top-[15%] left-[2%] w-6 h-6 text-white/60 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+<svg class="absolute top-[8%] left-[25%] w-4 h-4 text-pink-400/50 anim-float-3" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+<svg class="absolute top-[10%] right-[8%] w-10 h-10 text-pink-200 anim-float-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+<svg class="absolute top-[2%] right-[20%] w-5 h-5 text-white/80 anim-float-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+<svg class="absolute top-[40%] -left-2 w-12 h-12 text-pink-100 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+<svg class="absolute top-[50%] right-[2%] w-6 h-6 text-pink-300 anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+<svg class="absolute bottom-[10%] left-[10%] w-8 h-8 text-pink-200 anim-float-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+<svg class="absolute bottom-[5%] right-[15%] w-7 h-7 text-white/70 anim-float-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+<svg class="absolute bottom-[20%] right-[5%] w-4 h-4 text-pink-400/40 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
 </div>
 <!-- Toast Notification -->
-<div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-brown-500/95
-backdrop-blur-sm text-cream-50 px-6 py-3 rounded-full shadow-xl transition-all duration-300
-opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium
-text-sm border border-brown-400">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-pink-200">
-<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15
-9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+<div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-brown-500/95 backdrop-blur-sm text-cream-50 px-6 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium text-sm border border-brown-400">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-pink-200">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 </svg>
-คัดลอกเลขบัญชีแล ้ ว
+คัดลอกเลขบัญชีแล้ว
 </div>
 <!-- Container หลัก -->
 <div class="max-w-[420px] w-full relative z-10 space-y-5 pb-10">
 <!-- Header -->
 <div class="text-center pt-2 pb-2 relative">
-<h1 class="text-2xl font-bold tracking-tight text-pink-500 flex items-center
-justify-center gap-2">
+<h1 class="text-2xl font-bold tracking-tight text-pink-500 flex items-center justify-center gap-2">
 Merci Payment
 </h1>
 <p class="text-sm font-medium text-brown-400 mt-1">Payment & Checkout</p>
 </div>
-<!-- ================= ดีไซน์การ์ดแบบใหม่ (Glass & App Style) ================= -->
+<!-- การ์ด -->
 <div class="glass-card rounded-[40px] p-3 relative z-10">
-<!-- รูปภาพ (พร ้ อมกรอบเส ้ นประวิ่ง) -->
 <div class="relative p-2 rounded-[36px] z-10">
-<!-- SVG เส ้ นประวิ่ง -->
-<svg class="absolute inset-0 w-full h-full pointer-events-none"
-xmlns="http://www.w3.org/2000/svg">
-<rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)" rx="34"
-fill="none" stroke="#C97EA9" stroke-width="2.5" stroke-dasharray="12 12"
-stroke-linecap="round" class="animate-dash" />
+<svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)" rx="34" fill="none" stroke="#C97EA9" stroke-width="2.5" stroke-dasharray="12 12" stroke-linecap="round" class="animate-dash" />
 </svg>
-<!-- คอนเทนเนอร์รูปภาพ -->
-<div class="rounded-[28px] overflow-hidden relative shadow-sm border-[4px]
-border-white">
-<img
-src="IMG_9129.jpeg" alt="บัญชี Merci" class="w-full h-auto object-cover">
+<div class="rounded-[28px] overflow-hidden relative shadow-sm border-[4px] border-white">
+<img src="IMG_9129.jpeg" alt="บัญชี Merci" class="w-full h-auto object-cover">
 </div>
 </div>
-<!-- โซนข ้ อความ -->
 <div class="p-4 pt-6 space-y-5">
 <div class="text-center space-y-3">
 <p class="text-[15px] font-medium leading-relaxed text-brown-600">
 เลขบัญชีตามนี้เลยค่า<br>
-ชื่อบัญชี <span class="text-pink-500 font-bold bg-pink-50/80 px-2.5 py-0.5
-rounded-lg border border-pink-100 relative inline-block">Samatchaya K.</span> เท่านั้นน ้ า!!
+ชื่อบัญชี <span class="text-pink-500 font-bold bg-pink-50/80 px-2.5 py-0.5 rounded-lg border border-pink-100 relative inline-block">Samatchaya K.</span> เท่านั้นน้า!!
 </p>
 </div>
-<!-- โซนบัญชีธนาคาร -->
 <div class="space-y-4">
-<!-- บัตรกสิกรไทย -->
-<div class="virtual-card relative bg-gradient-to-br from-brown-400 to-brown-500
-rounded-[24px] p-5 shadow-lg shadow-brown-500/20 overflow-hidden cursor-pointer border
-border-brown-300/30" onclick="copyText('1231764298', this, 'kbank')">
+<!-- กล่องบัญชี 1 -->
+<div class="virtual-card relative bg-gradient-to-br from-brown-400 to-brown-500 rounded-[24px] p-5 shadow-lg shadow-brown-500/20 overflow-hidden cursor-pointer border border-brown-300/30" onclick="copyText('1231764298', this, 'kbank')">
 <div class="relative z-10 flex flex-col gap-4">
 <div class="flex justify-between items-center">
 <div class="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
@@ -207,15 +133,11 @@ border-brown-300/30" onclick="copyText('1231764298', this, 'kbank')">
 </div>
 <button class="kbank-btn bg-white text-brown-500 text-[12px] font-bold px-4 py-2 rounded-full flex items-center gap-1.5 shadow-sm pointer-events-none">คัดลอก</button>
 </div>
-<div class="mt-2">
-<div class="text-white font-bold text-[22px] tracking-widest leading-none drop-shadow-md">1231764298</div>
+<div class="mt-2 text-white font-bold text-[22px] tracking-widest leading-none drop-shadow-md">1231764298</div>
 </div>
 </div>
-</div>
-<!-- บัตร PromptPay -->
-<div class="virtual-card relative bg-gradient-to-br from-pink-300 to-pink-400
-rounded-[24px] p-5 shadow-lg shadow-pink-400/20 overflow-hidden cursor-pointer border
-border-pink-200/50" onclick="copyText('0930171718', this, 'true')">
+<!-- กล่องบัญชี 2 -->
+<div class="virtual-card relative bg-gradient-to-br from-pink-300 to-pink-400 rounded-[24px] p-5 shadow-lg shadow-pink-400/20 overflow-hidden cursor-pointer border border-pink-200/50" onclick="copyText('0930171718', this, 'true')">
 <div class="relative z-10 flex flex-col gap-4">
 <div class="flex justify-between items-center">
 <div class="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
@@ -223,9 +145,19 @@ border-pink-200/50" onclick="copyText('0930171718', this, 'true')">
 </div>
 <button class="true-btn bg-white text-pink-500 text-[12px] font-bold px-4 py-2 rounded-full flex items-center gap-1.5 shadow-sm pointer-events-none">คัดลอก</button>
 </div>
-<div class="mt-2">
-<div class="text-white font-bold text-[22px] tracking-widest leading-none drop-shadow-md">0930171718</div>
+<div class="mt-2 text-white font-bold text-[22px] tracking-widest leading-none drop-shadow-md">0930171718</div>
 </div>
+</div>
+<!-- กล่องข้อความ 3 อัน -->
+<div class="space-y-2 mt-4 text-[13px] text-brown-500 font-medium">
+<div class="bg-pink-50/50 p-3 rounded-xl border border-pink-100 flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-pink-400"></div> โอนแล้วรบกวนส่งสลิปให้ด้วยน้า
+</div>
+<div class="bg-pink-50/50 p-3 rounded-xl border border-pink-100 flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-pink-400"></div> กรุณาเช็คเลขบัญชีให้ถูกต้องนะคะ
+</div>
+<div class="bg-pink-50/50 p-3 rounded-xl border border-pink-100 flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-pink-400"></div> ขอบคุณที่อุดหนุนสินค้าค่า
 </div>
 </div>
 </div>
@@ -233,7 +165,7 @@ border-pink-200/50" onclick="copyText('0930171718', this, 'true')">
 </div>
 <!-- Footer Note -->
 <div class="text-center flex flex-col items-center justify-center gap-1.5 text-[11px] text-brown-400/80 pt-1 relative z-10">
-ปกติเค ้ าจะตอบกลับไม่เกิน 5 นาทีค่า
+ปกติเค้าจะตอบกลับไม่เกิน 5 นาทีค่า
 </div>
 </div>
 <script>
