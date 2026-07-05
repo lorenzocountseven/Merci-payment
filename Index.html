@@ -25,82 +25,87 @@
         .virtual-card:hover { transform: translateY(-4px); }
     </style>
     <script>
-        tailwind.config = { theme: { extend: { colors: { pink: { 400: '#C97EA9', 500: '#C97EA9' }, cream: { 50: '#FFF9E2', 100: '#FFF9E2' } } } } }
+        tailwind.config = { theme: { extend: { colors: { pink: { 400: '#C97EA9', 500: '#C97EA9' } } } } }
     </script>
 </head>
 <body class="flex flex-col items-center py-6 px-4 text-[#8b5e3c] relative overflow-x-hidden">
 
+    <!-- Background Decorative SVGs -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <svg class="absolute top-[5%] left-[10%] w-8 h-8 text-[#C97EA9] anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        <svg class="absolute top-[15%] left-[2%] w-6 h-6 text-[#F7D6E3] anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg class="absolute top-[50%] right-[2%] w-6 h-6 text-[#C97EA9] anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-[#C97EA9]/95 backdrop-blur-sm text-white px-6 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-pink-200"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         คัดลอกเลขบัญชีแล้ว
     </div>
 
     <div class="max-w-[420px] w-full relative z-10 space-y-5 pb-10">
         <div class="text-center pt-2 pb-2">
-            <h1 class="text-2xl font-bold text-[#C97EA9]">Merci Payment</h1>
+            <h1 class="text-2xl font-bold tracking-tight text-[#C97EA9] flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 anim-pulse"><path d="M11.645 20.91l-.007-.003-.022-.012A15.247 15.247 0 0112 5.052a5.5 5.5 0 014.313-2.052c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17z" /></svg>
+                Merci Payment
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 anim-pulse transform -scale-x-100"><path d="M11.645 20.91l-.007-.003-.022-.012A15.247 15.247 0 0112 5.052a5.5 5.5 0 014.313-2.052c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17z" /></svg>
+            </h1>
             <p class="text-sm font-medium text-[#C97EA9]/70 mt-1">Payment & Checkout</p>
         </div>
 
-        <div class="glass-card rounded-[40px] p-3">
+        <div class="glass-card rounded-[40px] p-3 relative z-10">
+            <svg class="absolute inset-0 w-full h-full pointer-events-none"><rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)" rx="34" fill="none" stroke="#C97EA9" stroke-width="2.5" stroke-dasharray="12 12" class="animate-dash" /></svg>
             <div class="rounded-[28px] overflow-hidden relative shadow-sm border-[4px] border-white">
-                <img src="IMG_9129.jpeg" alt="Payment" class="w-full h-auto object-cover">
+                <img src="IMG_9129.jpeg" alt="Account" class="w-full h-auto object-cover">
             </div>
 
             <div class="p-4 pt-6 space-y-5">
                 <div class="text-center space-y-3">
-                    <p class="text-[15px] font-medium text-[#8b5e3c]">
-                        เลขบัญชีตามนี้เลยค่า<br>
-                        ชื่อบัญชี <span class="text-[#C97EA9] font-bold">Samatchaya K.</span>
-                    </p>
+                    <p class="text-[15px] font-medium text-[#8b5e3c]">เลขบัญชีตามนี้เลยค่า<br>ชื่อบัญชี <span class="text-[#C97EA9] font-bold">Samatchaya K.</span></p>
                 </div>
 
-                <!-- ธนาคาร -->
-                <div class="virtual-card bg-gradient-to-br from-[#C97EA9] to-[#b36d95] rounded-[24px] p-5 shadow-lg cursor-pointer" onclick="copyText('1231764298', this, 'kbank')">
-                    <div class="flex justify-between items-center text-white">
-                        <span class="font-bold">K-Plus</span>
-                        <button class="kbank-btn bg-white/20 px-4 py-2 rounded-full text-xs font-bold text-white">คัดลอก</button>
+                <!-- K-Plus -->
+                <div class="virtual-card relative bg-gradient-to-br from-[#C97EA9] to-[#8b5e3c] rounded-[24px] p-5 shadow-lg cursor-pointer border border-[#C97EA9]/30" onclick="copyText('1231764298', this)">
+                    <svg class="absolute -right-6 -bottom-6 w-32 h-32 text-white opacity-10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <div class="relative z-10 flex justify-between items-center text-white">
+                        <span class="font-bold text-sm">K-Plus</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-[12px] font-bold">คัดลอก</span>
                     </div>
                     <div class="text-white font-bold text-[22px] tracking-widest mt-2">1231764298</div>
                 </div>
 
                 <!-- PromptPay -->
-                <div class="virtual-card bg-gradient-to-br from-[#C97EA9]/80 to-[#a85a86] rounded-[24px] p-5 shadow-lg cursor-pointer" onclick="copyText('0930171718', this, 'true')">
-                    <div class="flex justify-between items-center text-white">
-                        <span class="font-bold">PromptPay</span>
-                        <button class="true-btn bg-white/20 px-4 py-2 rounded-full text-xs font-bold text-white">คัดลอก</button>
+                <div class="virtual-card relative bg-gradient-to-br from-[#C97EA9]/80 to-[#C97EA9] rounded-[24px] p-5 shadow-lg cursor-pointer border border-[#C97EA9]/50" onclick="copyText('0930171718', this)">
+                    <div class="relative z-10 flex justify-between items-center text-white">
+                        <span class="font-bold text-sm">PromptPay</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-[12px] font-bold">คัดลอก</span>
                     </div>
                     <div class="text-white font-bold text-[22px] tracking-widest mt-2">0930171718</div>
                 </div>
 
-                <!-- แจ้งเตือน -->
-                <div class="bg-[#F7D6E3] border border-[#C97EA9] rounded-2xl p-3 text-[13px] text-[#8b5e3c] font-medium">
-                    โอนผิด โอนใหม่ ไม่โอนคืนนะคะ!<br>
-                    รบกวนเช็คชื่อและเลขบัญชีให้ดีก่อนโอนน้า
+                <!-- กล่องข้อความแจ้งเตือน -->
+                <div class="bg-[#F7D6E3] border border-[#C97EA9] rounded-2xl p-3 flex items-start gap-3">
+                    <div class="bg-white p-1.5 rounded-full text-[#C97EA9]"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
+                    <div class="text-[13px] text-[#8b5e3c] font-medium">โอนผิด โอนใหม่ ไม่โอนคืนนะคะ! รบกวนเช็คชื่อและเลขบัญชีให้ดีก่อนโอนน้า</div>
                 </div>
-                <div class="bg-[#FFF9E2] border border-[#C97EA9]/30 rounded-2xl p-3 text-[13px] text-[#8b5e3c] font-medium">
-                    โอนแล้วรบกวน แปะสลิปทุกครั้ง ด้วยน้าก้ะ<br>
-                    เค้าจะไดเช็คยอดให้ไวๆเล้ย
+
+                <div class="bg-[#FFF9E2] border border-[#C97EA9]/30 rounded-2xl p-3 flex items-start gap-3">
+                    <div class="bg-white p-1.5 rounded-full text-[#C97EA9]"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg></div>
+                    <div class="text-[13px] text-[#8b5e3c] font-medium">โอนแล้วรบกวน แปะสลิปทุกครั้ง ด้วยน้าก้ะ เค้าจะไดเช็คยอดให้ไวๆเล้ย</div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        function copyText(text, containerElement, type) {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
+        function copyText(text, el) {
+            navigator.clipboard.writeText(text);
             showToast();
-            
-            const btn = containerElement.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = 'คัดลอกสำเร็จ';
-            setTimeout(() => btn.innerText = originalText, 2000);
+            const btn = el.querySelector('span.bg-white\\/20');
+            const orig = btn.innerText;
+            btn.innerText = 'สำเร็จ';
+            setTimeout(() => btn.innerText = orig, 2000);
         }
-
         function showToast() {
             const toast = document.getElementById('toast');
             toast.classList.remove('opacity-0', 'translate-y-4');
